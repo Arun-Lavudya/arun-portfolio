@@ -1,23 +1,27 @@
-import { projects } from "../data/projects";
+import projects from "../data/projects";
+import "./Projects.css";
 
 export default function Projects() {
   return (
-    <section className="container">
-      <h2 className="section-title">Projects</h2>
+    <section id="projects" className="projects-section">
+      <h2>Projects</h2>
 
-      <div className="grid">
+      <div className="projects-grid">
         {projects.map((p, i) => (
           <div key={i} className="project-card">
             <h3>{p.title}</h3>
             <p>{p.description}</p>
 
-            <div className="tech-list">
-              {p.tech.map((t, j) => (
-                <span key={j} className="tech">{t}</span>
+            <div className="tech-tags">
+              {p.techStack.map((t, j) => (
+                <span key={j}>{t}</span>
               ))}
             </div>
 
-            <a className="project-btn" href={p.link}>View</a>
+            <div className="project-links">
+              {/* Assuming link is always present or placeholder */}
+              <a href={p.link} target="_blank" rel="noopener noreferrer">View Project &rarr;</a>
+            </div>
           </div>
         ))}
       </div>
