@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section className="section">
+    <section className="container">
       <h2 className="section-title">Contact Me</h2>
 
       <motion.div
@@ -12,7 +12,7 @@ export default function Contact() {
         className="card"
       >
         <p>Email: <a href="mailto:lavudyaarun1@gmail.com">lavudyaarun1@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/arun-lavudya">Profile</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/arun-lavudya-8a4388219" target="_blank" rel="noopener noreferrer">Profile</a></p>
         <p>Phone: 8897522375</p>
 
         <form className="contact-form">

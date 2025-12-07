@@ -1,38 +1,104 @@
-.navbar {
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  /* Update navbar to be a flex container directly if needed, relying on structure */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 2rem;
     position: fixed;
     top: 0;
     z-index: 1000;
     background: #000;
   }
-  
-  .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+
   .logo {
     font-size: 22px;
     font-weight: 700;
     color: #00b7ff;
   }
-  
+
   .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
+    margin-left: auto;
+    /* Pushes links to the right */
+    padding-right: 20px;
   }
-  
+
   .nav-links li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    transition: 0.3s;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
   }
-  
+
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00d2ff;
+    transition: width 0.3s ease;
+  }
+
   .nav-links li a:hover {
-    color: #00b7ff;
+    color: #00d2ff;
   }
-  
+
+  .nav-links li a:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive Navbar */
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #00b7ff;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-content {
+      padding: 0 1.5rem;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      flex-direction: column;
+      background-color: #000;
+      align-items: center;
+      gap: 20px;
+      transition: height 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links.open {
+      height: auto;
+      padding: 20px 0;
+      border-bottom: 1px solid #333;
+    }
+  }

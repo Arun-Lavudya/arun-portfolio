@@ -2,7 +2,7 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
-    <section className="section">
+    <section className="container">
       <h2 className="section-title">Projects</h2>
 
       <div className="grid">
